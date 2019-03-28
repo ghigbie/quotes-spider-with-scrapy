@@ -17,12 +17,6 @@ class QuotesSpider(scrapy.Spider):
             author = quote.xpath('.//*[@itemprop="author"]/text()').extract_first()
             tags = quote.xpath('.//*[@itemprop="keywords"]/@content').extract_first()
 
-            print('\n')
-            print(text)
-            print(author)
-            print(tags)
-            print('\n')
-
             yield {'Text': text,
                    'Author': author,
                    'Tags': tags}
